@@ -7,12 +7,34 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-<script src="https://contura310.s3.eu-central-1.amazonaws.com/contura_310.glb"></script>
-<body style='margin : 0px; overflow: hidden;'>
-	<a-scene embedded arjs='sourceType: webcam;'>
-		<a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
-		<a-marker-camera preset='hiro'></a-marker-camera>
-	</a-scene>
+    <model-viewer
+  alt="Chair"
+  src="https://contura310.s3.eu-central-1.amazonaws.com/contura_310.glb"
+  ios-src="https://pelmo1.s3.eu-west-3.amazonaws.com/chairdoneit.usdz"
+  style="width: 100%; height: 400px;"
+  background-color="#f6ffe3"
+  preload
+  reveal-when-loaded
+  auto-rotate
+  shadow-intensity="1"
+  camera-controls
+  magic-leap
+  ar-scale="auto"
+  data-js-focus-visible
+  ar>
+   <button slot="ar-button" style="background-color: black; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+   👋 Activate AR
+  </button>
+</model-viewer>
+<!--
+  You only need the script tags once in the page for all model-viewer elements:
+-->
+
+<!-- Optional, for Safari support -->
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+
+<!-- The model-viewer custom element -->
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 </body>
 </html>
